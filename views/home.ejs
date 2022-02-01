@@ -1,0 +1,52 @@
+   
+
+<div class="container">
+    <%- include('particial/header'); -%>
+ 
+<div class="row">
+    <div class="col-md-12">
+     <div class="card bg-warning  text-white rounded-0">
+         <div class="card-body">
+             <table class="table table-hover">
+             <thead>
+              <tr>
+                 
+                
+                  <th>name</th>
+                    <th>description</th>
+                  <th  class="text-center">Action</th>
+
+              </tr>
+             </thead>
+             <tbody>
+                 
+                <% departements.forEach(function(departement){ %>
+                 <tr>
+                    
+                    <td> <%= departement.name %> </td>
+                    <td> <%= departement.description %> </td>
+                  
+
+                     <td>
+                         <a href="/edit/<%= departement.uuid%>" title="Modifier" class="btn btn-sm text-drack"><i class="fa fa-edit"></i></a>
+                        </td>
+                        <td>
+                         <a href="/delete/<%= departement.uuid%>" title="Supprimer" class="btn btn-sm text-drack"><i class="fa fa-trash"></i></a>
+                        </td>
+                        <td>
+                         <a href="/departements/<%= departement.uuid%>" title="afficher" class="btn btn-sm text-drack"><i class="fas fa-users"></i></a>
+                        </td>
+
+                    
+
+                 </tr>
+                 <% }); %>
+             </tbody>
+             </table>
+         </div>
+     </div>
+    </div>
+</div>
+
+<%- include('particial/footer'); -%>
+</div>

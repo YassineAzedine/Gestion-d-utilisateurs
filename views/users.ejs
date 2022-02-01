@@ -1,0 +1,57 @@
+<div class="container">
+    <%- include('particial/header'); -%>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card bg-warning shadow ">
+
+                    <table class="table ">
+                        <thead class="text-center">
+
+                            <th>Name</th>
+
+                            <th>email</th>
+                            <th>password</th>
+                            <th>Action</th>
+
+                        </thead>
+                        <tbody>
+
+
+                            <% departement.users.forEach(function(user){ %>
+                                <tr>
+
+                                    <td>
+                                        <%= user.name %>
+                                    </td>
+                                    <td>
+                                        <%= user.email %>
+                                    </td>
+                                    <td>
+                                        <%= user.password %>
+                                    </td>
+
+
+
+
+                                    <td>
+
+                                        <a href="/user/edit/<%= user.uuid %>" title="Modifier"
+                                            class="btn btn-sm text-drack"><i class="fa fa-edit"></i></a>
+                                        <a href="/user/delete/<%= user.uuid %>" title="Supprimer"
+                                            class="btn btn-sm text-drack"><i class="fa fa-trash"></i></a>
+
+
+
+                                    </td>
+
+                                </tr>
+                                <% }); %>
+
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+        <%- include('particial/footer'); -%>
+</div>
